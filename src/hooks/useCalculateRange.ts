@@ -1,5 +1,6 @@
 import type { RocketRecipe } from "@/assets/types";
 import apiClient from "@/services/api-client";
+import { isAxiosError } from "axios";
 import { useEffect, useState } from "react";
 
 const useCalculateRange = (recipe: RocketRecipe) => {
@@ -15,10 +16,11 @@ const useCalculateRange = (recipe: RocketRecipe) => {
   useEffect(() => {
     apiClient
       .post<number>("/range", debouncedRecipe)
-      .then((res) => setCalculatedRange(res.data))
-      .catch((err) =>
-        setRangeError(`Failed to calculate range - ${err.message}`),
-      );
+      .then((res: { data: number }) => setCalculatedRange(res.data))
+      .catch((err: unknown) => {
+        if (isAxiosError(err))
+          setRangeError(`Failed to calculate range - ${err.message}`);
+      });
   }, [debouncedRecipe]);
   return { calculatedRange, rangeError };
 };

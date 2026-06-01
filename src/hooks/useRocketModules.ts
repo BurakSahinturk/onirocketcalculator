@@ -27,7 +27,7 @@ const useRocketModules = () => {
   useEffect(() => {
     apiClient
       .get<GameReferenceDataResponse>("/reference-data")
-      .then((res) => {
+      .then((res: { data: GameReferenceDataResponse }) => {
         setGameConstants(res.data.constants);
         setCommandsList(res.data.commands);
         setEnginesList(res.data.engines);

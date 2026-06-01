@@ -83,8 +83,8 @@ const Target = ({ recipe, engine, updateRecipe, lisan }: TargetProps) => {
     };
     setIsConfiguring(true);
     apiClient
-      .post("/configure", rangeRequest)
-      .then((res) => {
+      .post<RocketRecipe>("/configure", rangeRequest)
+      .then((res: { data: RocketRecipe }) => {
         updateRecipe(res.data);
         setError(null);
       })
