@@ -28,3 +28,4 @@ backend/tests/__pycache__/test_rockets.cpython-313-pytest-9.0.2.pyc
 backend/tests/__pycache__/test_json_conversions.cpython-313-pytest-9.0.2.pyc
 backend/tests/__pycache__/test_rocket_configurator.cpython-313-pytest-9.0.2.pyc
 backend/__init__.py
+.env
