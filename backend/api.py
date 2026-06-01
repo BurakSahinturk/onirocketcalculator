@@ -47,7 +47,7 @@ for exc in NOT_FOUND_EXCEPTIONS:
 # ------------------------------------------------------------------
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],   # React dev server – change in production
+    allow_origins=["*"],   # React dev server – change in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
