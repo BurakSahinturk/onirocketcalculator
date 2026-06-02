@@ -47,7 +47,7 @@ for exc in NOT_FOUND_EXCEPTIONS:
 # ------------------------------------------------------------------
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],   # React dev server – change in production
+    allow_origins=["https://onirocketcalculator.vercel.app/"],   # React dev server – change in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

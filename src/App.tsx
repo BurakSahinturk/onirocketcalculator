@@ -75,8 +75,8 @@ const App: React.FC = () => {
         base: "1fr",
         md: "1fr auto 3fr",
       }}
-      maxW={"100vw"}
-      maxH={"100vh"}>
+      maxW={"dvw"}
+      maxH={{ base: "none", md: "dvh" }}>
       <GridItem area="navbar">
         <Navbar lisan={lisan} setLisan={setLisan} />
       </GridItem>
