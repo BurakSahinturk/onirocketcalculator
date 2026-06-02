@@ -33,8 +33,8 @@ const missingEngineText = {
   Tr: "Menzili hesab edebilmek için motör seçin",
 };
 const notEnoughSteamText = {
-  En: "Steam Engine's fuel must be added as 'internal fuel'",
-  Tr: "Buhar motoruna yakıt motör içi kısmından eklenmeli",
+  En: "Steam Engine's fuel must be set in the 'internal fuel' section",
+  Tr: "Buhar motoruna yakıt 'motör içi yakıt' kısmından eklenmeli",
 };
 const notEnoughFuelText = {
   En: "Insufficient fuel for lift-off",
@@ -45,7 +45,7 @@ const notEnoughOxidizerText = {
   Tr: "Kalkış için kafi oksitleyici mevcut değil",
 };
 const fuelsNotEqualText = {
-  En: "For a most efficient flight, fuel and oxidizer amounts must be equal",
+  En: "For maximum efficiency, fuel and oxidizer amounts should match.",
   Tr: "En efektif uçuş için, yakıt ve oksitleyici miktarları eşit olmalı",
 };
 const oxiOnSteamText = {

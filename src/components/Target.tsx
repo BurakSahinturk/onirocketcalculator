@@ -30,7 +30,7 @@ const MissingOxidizerText = {
   Tr: "Lütfen bir oksitleyici seçin",
 };
 const LegendText = {
-  En: "Calculate for Target",
+  En: "Configure Rocket for Target Range",
   Tr: "Menzil için yakıt hesabı",
 };
 const ButtonText = {
