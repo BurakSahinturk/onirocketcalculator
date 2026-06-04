@@ -33,7 +33,7 @@ const missingEngineText = {
   Tr: "Menzili hesab edebilmek için motör seçin",
 };
 const notEnoughSteamText = {
-  En: "Steam Engine's fuel must be set in the 'internal fuel' section",
+  En: "Steam Engine's fuel must be set in the 'Internal Fuel' section",
   Tr: "Buhar motoruna yakıt 'motör içi yakıt' kısmından eklenmeli",
 };
 const notEnoughFuelText = {
@@ -49,7 +49,7 @@ const fuelsNotEqualText = {
   Tr: "En efektif uçuş için, yakıt ve oksitleyici miktarları eşit olmalı",
 };
 const oxiOnSteamText = {
-  En: "Steam engines does not use oxidizers",
+  En: "Steam engines do not require oxidizers",
   Tr: "Buhar motoru oksitleyici kullanmaz.",
 };
 
@@ -106,7 +106,7 @@ const Stats = ({
   };
 
   const getFuelsNotEqualAlert = () => {
-    if (fuelAmount !== oxiAmount)
+    if (fuelAmount != oxiAmount)
       return (
         <Alert.Root status="warning" size="sm">
           <Alert.Indicator />

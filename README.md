@@ -1,75 +1,239 @@
-# React + TypeScript + Vite
+# ONI Rocket Calculator 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fan-made rocket range calculator for the game **Oxygen Not Included** by Klei Entertainment.
 
-Currently, two official plugins are available:
+This web application allows players to:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Build rockets interactively
+- Configure engines, fuel tanks, oxidizers, and modules
+- Calculate rocket range in real time
+- Automatically configure rockets for a desired target range
+- Compare fuel and oxidizer efficiency
+- Use the tool in both English and Turkish
 
-## React Compiler
+---
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Live Demo
 
-Note: This will impact Vite dev & build performances.
+Frontend:
+https://onirocketcalculator.vercel.app/
 
-## Expanding the ESLint configuration
+Backend API:
+https://onirocketcalculator.onrender.com/
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Rocket Builder
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Select engines
+- Add/remove fuel tanks
+- Configure oxidizers
+- Add cargo and research modules
+- Adjust internal fuel
+
+### Real-Time Calculations
+
+- Dry mass
+- Propellant mass
+- Wet mass
+- Rocket range
+
+### Automatic Rocket Configuration
+
+Given:
+
+- a target range
+- an oxidizer type
+
+the backend attempts to automatically configure the rocket to reach the desired destination.
+
+### Validation & Warnings
+
+The app warns users about:
+
+- Missing engines
+- Insufficient fuel
+- Insufficient oxidizer
+- Steam engine fuel requirements
+- Inefficient fuel/oxidizer ratios
+
+### Localization
+
+- English
+- Turkish
+
+### Dark Mode
+
+Supports light and dark themes.
+
+---
+
+# Tech Stack
+
+## Frontend
+
+- React
+- TypeScript
+- Chakra UI
+- Axios
+- Vite
+
+## Backend
+
+- FastAPI
+- Python
+- Pydantic
+
+## Deployment
+
+- Frontend hosted on Vercel
+- Backend hosted on Render
+
+---
+
+# Project Structure
+
+```txt
+onirocketcalculator/
+│
+├── backend/          # FastAPI backend
+│
+├── src/
+│   ├── components/   # React UI components
+│   ├── hooks/        # Custom React hooks
+│   ├── services/     # API client
+│   ├── assets/       # Types and static data
+│   └── ...
+│
+├── public/
+└── ...
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# Running Locally
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 1. Clone Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/onirocketcalculator.git
+cd onirocketcalculator
 ```
+
+---
+
+# Frontend Setup
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run development server:
+
+```bash
+npm run dev
+```
+
+Frontend will run on:
+
+```txt
+http://localhost:5173
+```
+
+---
+
+# Backend Setup
+
+Go into backend directory:
+
+```bash
+cd backend
+```
+
+Create virtual environment:
+
+```bash
+python -m venv venv
+```
+
+Activate virtual environment:
+
+### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
+source venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run FastAPI server:
+
+```bash
+uvicorn api:app --reload
+```
+
+Backend will run on:
+
+```txt
+http://localhost:8000
+```
+
+---
+
+# Environment Variables
+
+Frontend uses:
+
+```env
+VITE_API_URL=https://your-backend-url.onrender.com
+```
+
+Create:
+
+```txt
+.env.production
+```
+
+in the frontend root directory.
+
+---
+
+# Notes
+
+This is an unofficial fan-made project.
+
+All Oxygen Not Included assets, logos, rocket designs, and related intellectual property belong to:
+
+- Klei Entertainment
+- Oxygen Not Included Wiki contributors
+
+This project is not affiliated with Klei Entertainment.
+
+---
+
+# Author
+
+Created by Burak Şahintürk.
+
+GitHub:
+https://github.com/https://github.com/BurakSahinturk
+
+---
+
+# License
+
+This project is for educational and fan-use purposes only.
