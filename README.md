@@ -5,10 +5,8 @@ A fan-made rocket range calculator for the game **Oxygen Not Included** by Klei 
 This web application allows players to:
 
 - Build rockets interactively
-- Configure engines, fuel tanks, oxidizers, and modules
 - Calculate rocket range in real time
 - Automatically configure rockets for a desired target range
-- Compare fuel and oxidizer efficiency
 - Use the tool in both English and Turkish
 
 ---
@@ -93,26 +91,6 @@ Supports light and dark themes.
 
 ---
 
-# Project Structure
-
-```txt
-onirocketcalculator/
-│
-├── backend/          # FastAPI backend
-│
-├── src/
-│   ├── components/   # React UI components
-│   ├── hooks/        # Custom React hooks
-│   ├── services/     # API client
-│   ├── assets/       # Types and static data
-│   └── ...
-│
-├── public/
-└── ...
-```
-
----
-
 # Running Locally
 
 ## 1. Clone Repository
@@ -136,12 +114,6 @@ Run development server:
 
 ```bash
 npm run dev
-```
-
-Frontend will run on:
-
-```txt
-http://localhost:5173
 ```
 
 ---
@@ -194,32 +166,11 @@ http://localhost:8000
 
 ---
 
-# Environment Variables
-
-Frontend uses:
-
-```env
-VITE_API_URL=https://your-backend-url.onrender.com
-```
-
-Create:
-
-```txt
-.env.production
-```
-
-in the frontend root directory.
-
----
-
 # Notes
 
 This is an unofficial fan-made project.
 
-All Oxygen Not Included assets, logos, rocket designs, and related intellectual property belong to:
-
-- Klei Entertainment
-- Oxygen Not Included Wiki contributors
+All Oxygen Not Included assets, logos, rocket designs, images, and related intellectual property belong to Klei Entertainment.
 
 This project is not affiliated with Klei Entertainment.
 
