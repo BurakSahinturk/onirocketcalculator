@@ -77,6 +77,10 @@ def set_fuel_for_range(rocket: Rocket, desired_range: float, oxidizer_type: Oxid
             if oxidizer_type == OxidizerType.LOX:
                 rocket.set_lox(rocket.fuel_amount)
 
+        if rocket.calculate_range() >= desired_range:
+        # If rocket can hit the range while fuel is 0, no need for the next step
+            return rocket
+
         # Step one step back up to find the sweet spot
         rocket.set_fuel(rocket.fuel_amount + 1)
         if oxidizer_type == OxidizerType.OXYLITE:
