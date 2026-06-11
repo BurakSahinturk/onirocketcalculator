@@ -166,5 +166,5 @@ class FuelSystem:
     def set_lox(self, amount: float) -> None:
         amount = validate_amount(amount)
         if amount > self._tanks[LiquidOxygenTank].capacity:
-            raise CapacityError("Not Enough Capacity")
+            raise CapacityError("Not enough capacity")
         self._tanks[LiquidOxygenTank].fuel_amount = amount
