@@ -20,7 +20,7 @@ const useRocketModules = () => {
   const [gameConstants, setGameConstants] = useState<GameConstants>({
     MAX_THRUSTERS: 0,
     MAX_FUEL_TANKS: 0,
-    MAX_MODULE_COUNT: 0,
+    MAX_EXTRA_MODULE_COUNT: 0,
     MAX_OXI_TANKS: 0,
   });
 

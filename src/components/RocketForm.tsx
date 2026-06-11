@@ -118,7 +118,7 @@ const RocketForm = ({
           extraModulesList={extraModulesList}
           moduleCounts={recipe.modules}
           onUpdateModules={updateModules}
-          maxModules={gameConstants.MAX_MODULE_COUNT}
+          maxModules={gameConstants.MAX_EXTRA_MODULE_COUNT}
           lisan={lisan}
         />
       </Box>
