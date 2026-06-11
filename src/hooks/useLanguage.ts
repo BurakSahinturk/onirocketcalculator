@@ -5,7 +5,7 @@ const useLanguage = () => {
   const getInitialLanguage = (): languageType => {
     const savedLang = localStorage.getItem("site-language");
     if (savedLang === "Tr" || savedLang === "En") return savedLang;
-    const browserLang = navigator.language || navigator.userLanguage;
+    const browserLang = navigator.languages?.[0] ?? navigator.language;
     if (browserLang?.toLowerCase().startsWith("tr")) return "Tr";
     else return "En";
   };

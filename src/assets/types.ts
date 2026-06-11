@@ -43,7 +43,7 @@ export interface RocketRecipe {
 export interface GameConstants {
   MAX_THRUSTERS: number;
   MAX_FUEL_TANKS: number;
-  MAX_MODULE_COUNT: number;
+  MAX_EXTRA_MODULE_COUNT: number;
   MAX_OXI_TANKS: number;
 }
 
@@ -71,7 +71,7 @@ export const OXIDIZER_TYPES = {
 export interface ConfigurationRequest {
   rocket_recipe: RocketRecipe;
   desired_range: number;
-  oxidizer: typeof OXIDIZER_TYPES;
+  oxidizer: keyof typeof OXIDIZER_TYPES | null;
 }
 
 export const languages = ["En", "Tr"] as const;

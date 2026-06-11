@@ -70,7 +70,7 @@ const Target = ({ recipe, engine, updateRecipe, lisan }: TargetProps) => {
       setError(MissingRangeText[lisan]);
       return;
     }
-    if (recipe.engine_system.engine == null) {
+    if (recipe.engine_system.engine != null) {
       if (oxidizer == null) {
         setError(MissingOxidizerText[lisan]);
         return;
