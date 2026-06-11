@@ -15,8 +15,6 @@ from schema import ComponentMetaData, EngineMetaData, TankMetaData
 # 2. Rocket Service
 # ------------------------------------------------------------------
 class RocketService:
-    def supply_rocket_components(self):
-        pass
     
     def supply_constants(self) -> dict[str, int]:
         return {

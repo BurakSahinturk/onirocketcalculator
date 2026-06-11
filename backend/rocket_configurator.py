@@ -21,8 +21,6 @@ def add_fuel_tanks(rocket:Rocket, desired_range: float, oxidizer_type: OxidizerT
         else:
             current_range = 0
             while current_range < desired_range:
-                if current_range >= desired_range:
-                    break
                 old_range=current_range
                 rocket.fuel_system.add_fuel_tank()
                 rocket.set_fuel(rocket.fuel_capacity)

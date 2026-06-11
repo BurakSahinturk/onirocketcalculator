@@ -114,10 +114,7 @@ class Rocket:
         sox_burnt_fuel = min(remaining_fuel, oxylite_amount)
         distance += sox_burnt_fuel * OxidizerEfficiency[OxidizerType.OXYLITE] * eng_eff
         remaining_fuel -= sox_burnt_fuel
-    
-        assert remaining_fuel >= 0
-        assert distance >= 0
-    
+
         return distance    
 
     @property

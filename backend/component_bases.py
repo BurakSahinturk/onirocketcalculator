@@ -58,7 +58,6 @@ class CargoType(Enum):
 # Base Component
 class Component(ABC):
     KEY: str
-    ONLYONE: bool = False
     MASS: int
     ROLE: ModuleRole
     DISPLAY_NAME: str = "Component"

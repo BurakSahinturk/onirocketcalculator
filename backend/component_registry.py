@@ -33,7 +33,7 @@ class ComponentRegistry:
     # --------------------------------------------------------------
     # 3. Register
     # --------------------------------------------------------------
-    def _universal_register(self, cls: type[Component], target_dict: dict[str, Any], category_name: str):
+    def _universal_register(self, cls: type[Component], target_dict: dict[str, Any]):
         if not hasattr(cls, "KEY") or not cls.KEY:
             raise UnknownComponentError(f"Class {cls.__name__} must define a valid string 'KEY' attribute.")
         if cls.KEY in target_dict:
@@ -45,37 +45,37 @@ class ComponentRegistry:
     # 4. Decorators
     # --------------------------------------------------------------
     def command(self, cls: type[BaseCommand]) -> type[BaseCommand]:
-        self._universal_register(cls, self._command, "Command")
+        self._universal_register(cls, self._command)
         return cls
 
     def engine(self, cls: type[Engine]) -> type[Engine]:
         if not issubclass(cls, Engine):
             raise TypeError(f"{cls.__name__} is not an Engine subclass.")
-        self._universal_register(cls, self._engines, "Engine")
+        self._universal_register(cls, self._engines)
         return cls
 
     def fuel_tank(self, cls: type[BaseFuelTank]) -> type[BaseFuelTank]:
         if cls.ROLE != ModuleRole.FUEL_TANK:
             raise TypeError(f"{cls.__name__} does not have role FUEL_TANK.")
-        self._universal_register(cls, self._fuel_tanks, "Fuel Tank")
+        self._universal_register(cls, self._fuel_tanks)
         return cls
 
     def oxidizer_tank(self, cls: type[OxidizerTank]) -> type[OxidizerTank]:
         if cls.ROLE != ModuleRole.OXI_TANK:
             raise TypeError(f"{cls.__name__} does not have role OXI_TANK.")
-        self._universal_register(cls, self._oxidizer_tanks, "Oxidizer Tank")
+        self._universal_register(cls, self._oxidizer_tanks)
         return cls
 
     def extra_module(self, cls: type[ExtraModule]) -> type[ExtraModule]:
         if cls.ROLE != ModuleRole.EXTRA:
             raise TypeError(f"{cls.__name__} is not an extra module.")
-        self._universal_register(cls, self._extra_modules, "Extra Module")
+        self._universal_register(cls, self._extra_modules)
         return cls
 
     def thruster(self, cls: type[BaseThruster]) -> type[BaseThruster]:
         if cls.ROLE != ModuleRole.THRUSTER:
             raise TypeError(f"{cls.__name__} is not a Thruster.")
-        self._universal_register(cls, self._thrusters, "Thruster")
+        self._universal_register(cls, self._thrusters)
         return cls
 
     # --------------------------------------------------------------
@@ -128,7 +128,7 @@ class ComponentRegistry:
             try:
                 return self._oxidizer_tanks[key]
             except KeyError:
-                raise UnknownComponentError(f"Unknown oxidizer tank: '{key}'")
+                raise UnknownComponentError(f"Unknown oxidizer / fuel tank: '{key}'")
 
     def get_extra_module(self, key: str) -> type[ExtraModule]:
         """Return the module class for the given external key and makes sure it has role of 'Extra Module'

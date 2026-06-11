@@ -14,7 +14,6 @@ from component_registry import registry
 @registry.command
 class CommandCapsule(BaseCommand):
     KEY: str = "command"
-    ONLYONE: bool = True
     MASS: int = 200
     DISPLAY_NAME: str = "Command Capsule"
 
@@ -25,7 +24,6 @@ class CommandCapsule(BaseCommand):
 @registry.engine
 class BiodieselEngine(ExternalFuelEngine):
     KEY: str = "bio_engine"
-    ONLYONE: bool = True
     ENGINE_TYPE: EngineType = EngineType.BIODIESEL
     MASS: int = 200
     EFFICIENCY: float = EngineEfficiency.BIODIESEL.value
@@ -34,7 +32,6 @@ class BiodieselEngine(ExternalFuelEngine):
 @registry.engine
 class HydrogenEngine(ExternalFuelEngine):
     KEY: str = "h2_engine"
-    ONLYONE: bool = True
     ENGINE_TYPE: EngineType = EngineType.HYDROGEN
     MASS: int = 500
     EFFICIENCY: float = EngineEfficiency.HYDROGEN.value
@@ -43,7 +40,6 @@ class HydrogenEngine(ExternalFuelEngine):
 @registry.engine
 class PetroleumEngine(ExternalFuelEngine):
     KEY: str = "petrol_engine"
-    ONLYONE: bool = True
     ENGINE_TYPE: EngineType = EngineType.PETROL
     MASS: int = 200
     EFFICIENCY: float = EngineEfficiency.PETROL.value
@@ -52,7 +48,6 @@ class PetroleumEngine(ExternalFuelEngine):
 @registry.engine
 class SteamEngine(InternalFuelEngine):
     KEY: str = "steam_engine"
-    ONLYONE: bool = True
     CAPACITY: int = 900
     ENGINE_TYPE: EngineType = EngineType.STEAM
     MASS: int = 2000
